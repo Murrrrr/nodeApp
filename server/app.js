@@ -10,6 +10,10 @@ app.get("/ping", (req, res) => {
   res.send("pong");
 });
 
+app.use('/auth', (req, res)=>{
+  res.send("pingping");
+})
+
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 
