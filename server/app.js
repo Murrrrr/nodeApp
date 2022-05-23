@@ -12,7 +12,7 @@ app.get("/ping", (req, res) => {
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 
-// git
+console.log(123);
 
 app.get("/*", (req, res) => {
   res.set({
