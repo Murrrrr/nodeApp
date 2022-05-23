@@ -10,7 +10,7 @@ app.get("/ping", (req, res) => {
   res.send("pong");
 });
 
-app.use('/auth', (req, res)=>{
+app.get('/auth', (req, res)=>{
   res.send("pingping");
 })
 
