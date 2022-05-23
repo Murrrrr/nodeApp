@@ -12,7 +12,6 @@ app.get("/ping", (req, res) => {
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 
-console.log(123);
 
 app.get("/*", (req, res) => {
   res.set({
