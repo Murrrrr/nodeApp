@@ -12,6 +12,8 @@ app.get("/ping", (req, res) => {
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 
+// git
+
 app.get("/*", (req, res) => {
   res.set({
     "Cache-Control": "no-cache, no-store, must-revalidate",
