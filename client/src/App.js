@@ -1,23 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';   //axios 추가
 
-function App() {
+const App=()=>{
+
+  const send =()=>{
+    const client = axios.create();   // axios 기능생성
+    const name = '내이름은 코난';   
+    client.post('/api' , {name} );   //axios 기능을 통한 post 사용및 name 값 전달.
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <button onClick={ ()=>{ send(); }}>보내기 버튼 생성!</button>
     </div>
   );
 }

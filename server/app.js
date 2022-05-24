@@ -1,31 +1,11 @@
-const http = require("http");
-const express = require("express");
-const path = require("path");
+const express = require('express') 
+const app = express() 
+const port = 3001 // react의 기본값은 3000이니까 3000이 아닌 아무 수
 
-const app = express();
-
-const port = 3000; //인스턴스 생성시 만들었던 포트번호 기입
-
-app.get("/ping", (req, res) => {
-  res.send("pong");
-});
-
-app.get('/auth', (req, res)=>{
-  res.send("pingping");
+app.get('/', (req, res) =>{
+    res.send('혁이는 코딩 중!')
 })
 
-app.use(express.static(path.join(__dirname, "../client/build")));
-
-
-app.get("/*", (req, res) => {
-  res.set({
-    "Cache-Control": "no-cache, no-store, must-revalidate",
-    Pragma: "no-cache",
-    Date: Date.now()
-  });
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
-
-http.createServer(app).listen(port, () => {
-  console.log(`app listening at ${port}`);
-});
+app.listen(port, ()=>{
+    console.log(`Connect at http://localhost:${port}`); // '가 아닌 좌측상단의 esc버튼 밑의 `다.
+})
